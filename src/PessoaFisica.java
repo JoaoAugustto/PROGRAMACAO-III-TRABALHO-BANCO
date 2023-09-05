@@ -7,7 +7,7 @@ public class PessoaFisica {
         this.cpf = cpf;
     }
 
-    public PessoaFisica(){
-        
+    public String getCPF(){
+        return cpf;
     }
 }
