@@ -7,12 +7,17 @@ public class PessoaFisicaSer{
     Scanner scanner = new Scanner(System.in);
 
     public void Cadastrar() throws IOException{
-        System.out.print("Coloque o seu NOME: ");
-        String nome = scanner.nextLine();
-        System.out.print("Coloque o seu CPF: ");
+         System.out.println("Digite o seu cpf: ");
         String cpf = scanner.nextLine();
+        if (hashPF.containsKey(cpf)){
+            System.out.println("Nao pode existir o mesmo cpf para duas pessoas");
+            return;
+        }
+        System.out.println("Digite seu nome");
+        String nome = scanner.nextLine();
 
-        hashPF.put(cpf, new PessoaFisica(nome, cpf));
+        hashPF.put(cpf, new PessoaFisica(nome,  cpf));
+        System.out.println(hashPF.get(cpf));
     }
 
     public PessoaFisica obterPorCPF(String cpf){

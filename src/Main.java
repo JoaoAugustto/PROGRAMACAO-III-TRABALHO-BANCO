@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Main {
     private static PessoaFisicaSer pessoaFisicaSer = new PessoaFisicaSer();
-    private static ContaSer contaSer = new ContaSer();
+    private static ContaSer contaSer = new ContaSer(pessoaFisicaSer);
         public static void main(String[] args) {
             int OpcaoMenu = 1;
             Scanner scanner = new Scanner(System.in);
@@ -32,16 +32,16 @@ public class Main {
                         contaSer.cadastrarContaCorrente();
                         break;
                     case 3:
-
+                        contaSer.cadastrarContaPoupanca();
                         break;
                     case 4:
-
+                        contaSer.efetuarDeposito();
                         break;
                     case 5:
-
+                        contaSer.efetuarSaque();
                         break;
                     case 6:
-
+                        contaSer.efetuarTransferencia();
                         break;
                     case 0:
                         System.out.println("OBRIGADO POR USSAR O SISTEMA");
